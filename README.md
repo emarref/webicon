@@ -19,7 +19,7 @@ Tip: place this script somewhere in your system's $PATH for easy access.
 ## Requirements
 
 * *nix environment
-* Image Magick
+* [Image Magick](http://www.imagemagick.org/)
 
 ## Credit
 
