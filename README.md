@@ -2,7 +2,7 @@
 
 Generate favicon and touch icons via a shell script.
 
-To use, simply execute the ```webicon.sh``` shell script from t he command line, passing the filename of your source image as the only argument. The following copies of the source image are generated in the current directory:
+To use, simply execute the ```webicon.sh``` shell script from the command line, passing the filename of your source image as the only argument. The following copies of the source image are generated in the current directory:
 
 * apple-touch-icon-144x144-precomposed.png
 * apple-touch-icon-114x114-precomposed.png
