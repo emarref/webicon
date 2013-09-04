@@ -25,4 +25,4 @@ Tip: place this script somewhere in your system's $PATH for easy access.
 
 Concept from [http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html](http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html)
 
-Input from @pjkix
+Input from [@pjkix](https://github.com/pjkix)
