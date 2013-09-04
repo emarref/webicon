@@ -21,6 +21,10 @@ Tip: place this script somewhere in your system's $PATH for easy access.
 * *nix environment
 * [Image Magick](http://www.imagemagick.org/)
 
+## Todo
+
+* Output required markup to embed in HTML page.
+
 ## Credit
 
 Concept from [http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html](http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html)
