@@ -21,6 +21,10 @@ The original image remains untouched.
 
 Tip: place this script somewhere in your system's $PATH for easy access.
 
+## Screenshot
+
+![webicon](http://i.imgur.com/l3PseYN.png "Webicon Screenshot")
+
 ## Requirements
 
 * *nix environment
