@@ -41,6 +41,7 @@ cp $PWD/apple-touch-icon.png $PWD/apple-touch-icon-57x57-precomposed.png
 $CONVERT_CMD $PWD/favicon-256.png -resize 72x72 $PWD/apple-touch-icon-72x72-precomposed.png
 $CONVERT_CMD $PWD/favicon-256.png -resize 114x114 $PWD/apple-touch-icon-114x114-precomposed.png
 $CONVERT_CMD $PWD/favicon-256.png -resize 144x144 $PWD/apple-touch-icon-144x144-precomposed.png
+$CONVERT_CMD $PWD/favicon-256.png -resize 152x152 $PWD/apple-touch-icon-152x152-precomposed.png
 
 echo "Removing temp files"
 rm -rf $PWD/favicon-16.png
