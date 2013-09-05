@@ -62,7 +62,7 @@ function generate_png {
     fi
 
     echo "$IMAGE_NAME-${SIZE}.png"
-    $CONVERT_CMD $SOURCE -resize ${SIZE}x${SIZE}! -transparent $TRANSPARENT_COLOUR $PWD/$IMAGE_NAME-${SIZE}.png
+    $CONVERT_CMD $SOURCE -resize ${SIZE}x${SIZE}! -alpha On $PWD/$IMAGE_NAME-${SIZE}.png
 }
 
 echo "Generating square base image"
@@ -76,10 +76,11 @@ echo "Generating required versions at different sizes"
 generate_png 16
 generate_png 32
 generate_png 48
-generate_png 64
 generate_png 57
+generate_png 64
 generate_png 72
 generate_png 114
+generate_png 120
 generate_png 144
 generate_png 152
 
@@ -87,7 +88,7 @@ generate_png 152
 # GENERATE THE FAVICON.ICO FILE
 
 echo "Generating ico"
-$CONVERT_CMD $PWD/$IMAGE_NAME-16.png $PWD/$IMAGE_NAME-32.png $PWD/$IMAGE_NAME-48.png $PWD/$IMAGE_NAME-64.png -colors 256 $PWD/$IMAGE_NAME.ico
+$CONVERT_CMD $PWD/$IMAGE_NAME-16.png $PWD/$IMAGE_NAME-32.png $PWD/$IMAGE_NAME-48.png $PWD/$IMAGE_NAME-64.png -colors 256 -background $TRANSPARENT_COLOUR $PWD/$IMAGE_NAME.ico
 
 ######################################
 # OUTPUT USEFUL MARKUP
@@ -99,7 +100,7 @@ echo
 echo -e "${COLOUR_INTRO}Add the following tags to the head of your document. Remove any you don't want.${NO_COLOUR}"
 echo -e "${COLOUR_INTRO}Compiled from https://github.com/audreyr/favicon-cheat-sheet${NO_COLOUR}"
 echo
-echo -e "${COLOUR_TAG}<link${COLOUR_ATTR_NAME} rel=${COLOUR_ATTR_VALUE}\"icon\"${COLOUR_ATTR_NAME} sizes=${COLOUR_ATTR_VALUE}\"16x16 32x32\"${COLOUR_ATTR_NAME} href=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon.ico\"${COLOUR_TAG}>${NO_COLOUR}"
+echo -e "${COLOUR_TAG}<link${COLOUR_ATTR_NAME} rel=${COLOUR_ATTR_VALUE}\"icon\"${COLOUR_ATTR_NAME} sizes=${COLOUR_ATTR_VALUE}\"16x16 32x32 48x48 64x64\"${COLOUR_ATTR_NAME} href=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon.ico\"${COLOUR_TAG}>${NO_COLOUR}"
 echo -e "${COLOUR_COMMENT}<!--[if IE]><link rel=\"shortcut icon\" href=\"${WEBSITE_DOMAIN}/favicon.ico\"><![endif]-->${NO_COLOUR}"
 echo
 echo -e "${COLOUR_COMMENT}<!-- The below are optional but encouraged -->${NO_COLOUR}"

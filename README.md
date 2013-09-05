@@ -1,15 +1,20 @@
 # Web Icon
 
-Generate favicon and touch icons via a shell script.
+Generate web icons such as favicon and touch icons with a shell script.
 
-To use, simply execute the ```webicon.sh``` shell script from the command line, passing the filename of your source image as the only argument. The following copies of the source image are generated in the current directory:
+To use, simply execute the ```webicon.sh``` shell script from the command line, passing the filename of your source image as the only argument. The following images are generated in the current directory:
 
-* apple-touch-icon-144x144-precomposed.png
-* apple-touch-icon-114x114-precomposed.png
-* apple-touch-icon-57x57-precomposed.png
-* apple-touch-icon-72x72-precomposed.png
-* apple-touch-icon-precomposed.png
-* apple-touch-icon.png
+* favicon-256.png
+* favicon-152.png
+* favicon-144.png
+* favicon-114.png
+* favicon-120.png
+* favicon-72.png
+* favicon-64.png
+* favicon-57.png
+* favicon-48.png
+* favicon-32.png
+* favicon-16.png
 * favicon.ico
 
 The original image remains untouched.
@@ -19,14 +24,10 @@ Tip: place this script somewhere in your system's $PATH for easy access.
 ## Requirements
 
 * *nix environment
-* [Image Magick](http://www.imagemagick.org/)
-
-## Todo
-
-* Output required markup to embed in HTML page.
+* [Image Magick](http://www.imagemagick.org/) for the ```convert``` command
 
 ## Credit
 
-Concept from [http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html](http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html)
-
-Input from [@pjkix](https://github.com/pjkix)
+* Concept from [http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html](http://bergamini.org/computers/creating-favicon.ico-icon-files-with-imagemagick-convert.html)
+* Input from [@pjkix](https://github.com/pjkix)
+* Research by [@audreyr](https://github.com/audreyr) in the [favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet) project
