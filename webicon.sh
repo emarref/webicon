@@ -88,17 +88,26 @@ generate_png 32
 generate_png 48
 generate_png 57
 generate_png 64
+generate_png 70
 generate_png 72
 generate_png 114
 generate_png 120
 generate_png 144
+generate_png 150
 generate_png 152
+generate_png 310x150
+generate_png 310
 
 ######################################
 # GENERATE THE FAVICON.ICO FILE
 
 echo "Generating ico"
-$CONVERT_CMD $PWD/$IMAGE_NAME-16.png $PWD/$IMAGE_NAME-32.png $PWD/$IMAGE_NAME-48.png $PWD/$IMAGE_NAME-64.png -colors 256 -background $TRANSPARENT_COLOUR $PWD/$IMAGE_NAME.ico
+$CONVERT_CMD \
+$PWD/$IMAGE_NAME-16.png \
+$PWD/$IMAGE_NAME-32.png \
+$PWD/$IMAGE_NAME-48.png \
+$PWD/$IMAGE_NAME-64.png \
+-colors 256 -background $TRANSPARENT_COLOUR $PWD/$IMAGE_NAME.ico
 
 ######################################
 # OUTPUT USEFUL MARKUP
@@ -123,6 +132,13 @@ echo
 echo -e "${COLOUR_COMMENT}<!-- IE 10 Metro tile icon (Metro equivalent of apple-touch-icon): -->${NO_COLOUR}"
 echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-TileColor\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"$TRANSPARENT_COLOUR\"${COLOUR_TAG}>${NO_COLOUR}"
 echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-TileImage\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-144.png\"${COLOUR_TAG}>${NO_COLOUR}"
+
+echo -e "${COLOUR_COMMENT}<!-- IE 11 live tiles: -->${NO_COLOUR}"
+echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-square70x70logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-70.png\"${COLOUR_TAG} />${NO_COLOUR}"
+echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-square150x150logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-150.png\"${COLOUR_TAG} />${NO_COLOUR}"
+echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-wide310x150logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-310x150.png\"${COLOUR_TAG} />${NO_COLOUR}"
+echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-square310x310logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-310.png\"${COLOUR_TAG} />${NO_COLOUR}"
+
 echo -e "${COLOUR_COMMENT}<!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->${NO_COLOUR}"
 echo -e "${COLOUR_TAG}<link${COLOUR_ATTR_NAME} rel=${COLOUR_ATTR_VALUE}\"apple-touch-icon-precomposed\"${COLOUR_ATTR_NAME} sizes=${COLOUR_ATTR_VALUE}\"152x152\"${COLOUR_ATTR_NAME} href=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-152.png\"${COLOUR_TAG}>${NO_COLOUR}"
 echo -e "${COLOUR_COMMENT}<!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->${NO_COLOUR}"
