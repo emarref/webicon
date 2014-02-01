@@ -51,18 +51,28 @@ function generate_png {
     local SIZE=$1
     local SOURCE=$2
 
-    if [ -z "$SOURCE" ]; then
+    if [ -z "$SOURCE" ];
+    then
         SOURCE="$PWD/$IMAGE_NAME-256.png"
     fi
 
-    if [ -z $SOURCE ];
+    if [ ! -f $SOURCE ];
     then
         echo "Could not find the source image $SOURCE"
         exit 1;
     fi
 
+    if [[ $SIZE =~ ^([0-9]+)x([0-9]+)$ ]];
+    then
+        WIDTH=${BASH_REMATCH[1]}
+        HEIGHT=${BASH_REMATCH[2]}
+    else
+        WIDTH=$SIZE
+        HEIGHT=$SIZE
+    fi
+
     echo "$IMAGE_NAME-${SIZE}.png"
-    $CONVERT_CMD $SOURCE -resize ${SIZE}x${SIZE}! -alpha On $PWD/$IMAGE_NAME-${SIZE}.png
+    $CONVERT_CMD $SOURCE -crop ${WIDTH}x${HEIGHT}+0+0 -resize ${WIDTH}x${HEIGHT}! -alpha On $PWD/$IMAGE_NAME-${SIZE}.png
 }
 
 echo "Generating square base image"
