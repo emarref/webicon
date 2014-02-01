@@ -1,6 +1,6 @@
 # Web Icon
 
-Generate web icons such as favicon and touch icons with a shell script, then displays the markup needed to use them in your HTML.
+Generate web icons such as favicon and touch icons with a shell script, then display the markup needed to use them in your HTML.
 
 To use, simply execute the ```webicon.sh``` shell script from the command line, passing the filename of your source image as the only argument. The following images are generated in the current directory:
 
