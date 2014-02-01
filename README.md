@@ -1,15 +1,19 @@
 # Web Icon
 
-Generate web icons such as favicon and touch icons with a shell script.
+Generate web icons such as favicon and touch icons with a shell script, then displays the markup needed to use them in your HTML.
 
 To use, simply execute the ```webicon.sh``` shell script from the command line, passing the filename of your source image as the only argument. The following images are generated in the current directory:
 
+* favicon-310.png
+* favicon-310x150.png
 * favicon-256.png
 * favicon-152.png
+* favicon-150.png
 * favicon-144.png
 * favicon-114.png
 * favicon-120.png
 * favicon-72.png
+* favicon-70.png
 * favicon-64.png
 * favicon-57.png
 * favicon-48.png
@@ -20,10 +24,6 @@ To use, simply execute the ```webicon.sh``` shell script from the command line, 
 The original image remains untouched.
 
 Tip: place this script somewhere in your system's $PATH for easy access.
-
-## Screenshot
-
-![webicon](http://i.imgur.com/l3PseYN.png "Webicon Screenshot")
 
 ## Requirements
 
