@@ -72,7 +72,7 @@ function generate_png {
     fi
 
     echo "$IMAGE_NAME-${SIZE}.png"
-    $CONVERT_CMD $SOURCE -crop ${WIDTH}x${HEIGHT}+0+0 -resize ${WIDTH}x${HEIGHT}! -alpha On $PWD/$IMAGE_NAME-${SIZE}.png
+    $CONVERT_CMD $SOURCE -resize ${WIDTH}x${HEIGHT}! -crop ${WIDTH}x${HEIGHT}+0+0 -alpha On $PWD/$IMAGE_NAME-${SIZE}.png
 }
 
 echo "Generating square base image"
@@ -95,7 +95,8 @@ generate_png 120
 generate_png 144
 generate_png 150
 generate_png 152
-generate_png 310x150
+# TODO Figure out crop/resize priority etc.
+# generate_png 310x150
 generate_png 310
 
 ######################################
@@ -136,7 +137,7 @@ echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msappl
 echo -e "${COLOUR_COMMENT}<!-- IE 11 live tiles: -->${NO_COLOUR}"
 echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-square70x70logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-70.png\"${COLOUR_TAG} />${NO_COLOUR}"
 echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-square150x150logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-150.png\"${COLOUR_TAG} />${NO_COLOUR}"
-echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-wide310x150logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-310x150.png\"${COLOUR_TAG} />${NO_COLOUR}"
+# echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-wide310x150logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-310x150.png\"${COLOUR_TAG} />${NO_COLOUR}"
 echo -e "${COLOUR_TAG}<meta${COLOUR_ATTR_NAME} name=${COLOUR_ATTR_VALUE}\"msapplication-square310x310logo\"${COLOUR_ATTR_NAME} content=${COLOUR_ATTR_VALUE}\"${WEBSITE_DOMAIN}/favicon-310.png\"${COLOUR_TAG} />${NO_COLOUR}"
 
 echo -e "${COLOUR_COMMENT}<!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->${NO_COLOUR}"

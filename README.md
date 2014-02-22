@@ -5,7 +5,6 @@ Generate web icons such as favicon and touch icons with a shell script, then dis
 To use, simply execute the ```webicon.sh``` shell script from the command line, passing the filename of your source image as the only argument. The following images are generated in the current directory:
 
 * favicon-310.png
-* favicon-310x150.png
 * favicon-256.png
 * favicon-152.png
 * favicon-150.png
