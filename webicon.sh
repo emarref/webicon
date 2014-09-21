@@ -108,7 +108,7 @@ $PWD/$IMAGE_NAME-16.png \
 $PWD/$IMAGE_NAME-32.png \
 $PWD/$IMAGE_NAME-48.png \
 $PWD/$IMAGE_NAME-64.png \
--colors 256 -background $TRANSPARENT_COLOUR $PWD/$IMAGE_NAME.ico
+-background $TRANSPARENT_COLOUR $PWD/$IMAGE_NAME.ico
 
 ######################################
 # OUTPUT USEFUL MARKUP
