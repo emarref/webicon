@@ -27,7 +27,7 @@ Tip: place this script somewhere in your system's $PATH for easy access.
 ## Requirements
 
 * *nix environment
-* [Image Magick](http://www.imagemagick.org/) for the ```convert``` command
+* [Image Magick](http://www.imagemagick.org/) for the ```convert``` command. (On OSX, `brew install imagemagick`)
 
 ## Credit
 
