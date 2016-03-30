@@ -10,6 +10,10 @@ TRANSPARENT_COLOUR="#FFFFFF"
 IMAGE_NAME="favicon"
 WEBSITE_DOMAIN="http://www.yourwebsite.com"
 
+OPTIMIZER_CMD=`which optipng`
+OPTIMIZER_OPTS="-o 7 -quiet"
+OPTIMIZE=1
+
 ######################################
 # COLOURS
 
@@ -34,6 +38,11 @@ then
     echo "ImageMagick needs to be installed to run this script"
     exit;
 fi
+if [ -z $OPTIMIZER_CMD ] || [ ! -f $OPTIMIZER_CMD ] || [ ! -x $OPTIMIZER_CMD ];
+  then
+  echo "Not using PNG optimizer"
+  OPTIMIZE=0
+fi
 
 if [ -z $SRC_IMAGE ];
 then
@@ -56,7 +65,7 @@ function generate_png {
         SOURCE="$PWD/$IMAGE_NAME-256.png"
     fi
 
-    if [ ! -f $SOURCE ];
+    if [ ! -f "$SOURCE" ];
     then
         echo "Could not find the source image $SOURCE"
         exit 1;
@@ -72,7 +81,8 @@ function generate_png {
     fi
 
     echo "$IMAGE_NAME-${SIZE}.png"
-    $CONVERT_CMD $SOURCE -resize ${WIDTH}x${HEIGHT}! -crop ${WIDTH}x${HEIGHT}+0+0 -alpha On $PWD/$IMAGE_NAME-${SIZE}.png
+    $CONVERT_CMD "$SOURCE" -resize ${WIDTH}x${HEIGHT}! -crop ${WIDTH}x${HEIGHT}+0+0 -alpha On "$PWD/$IMAGE_NAME-${SIZE}.png"
+    $OPTIMIZER_CMD $OPTIMIZER_OPTS "$PWD/$IMAGE_NAME-${SIZE}.png"
 }
 
 echo "Generating square base image"
@@ -104,11 +114,11 @@ generate_png 310
 
 echo "Generating ico"
 $CONVERT_CMD \
-$PWD/$IMAGE_NAME-16.png \
-$PWD/$IMAGE_NAME-32.png \
-$PWD/$IMAGE_NAME-48.png \
-$PWD/$IMAGE_NAME-64.png \
--background $TRANSPARENT_COLOUR $PWD/$IMAGE_NAME.ico
+"$PWD/$IMAGE_NAME-16.png" \
+"$PWD/$IMAGE_NAME-32.png" \
+"$PWD/$IMAGE_NAME-48.png" \
+"$PWD/$IMAGE_NAME-64.png" \
+-background $TRANSPARENT_COLOUR "$PWD/$IMAGE_NAME.ico"
 
 ######################################
 # OUTPUT USEFUL MARKUP
